@@ -1,0 +1,13 @@
+WARNING 2021-06-29 12:11:05,769 [practice_logging.py:<module>:8] Everything is going well.
+DEBUG 2021-06-29 12:11:05,770 [refinement_for_practice_logging.py:refinement:6] is about to download data.
+DEBUG 2021-06-29 12:11:07,829 [fetch_for_practice_logging.py:popular_movie:9] get the web address https://www.the-numbers.com/market/2021/top-grossing-movies
+DEBUG 2021-06-29 12:11:07,863 [fetch_for_practice_logging.py:popular_movie:12] get the data
+DEBUG 2021-06-29 12:11:07,864 [fetch_for_practice_logging.py:popular_movie:14] data is cleaned to be read
+DEBUG 2021-06-29 12:11:07,865 [refinement_for_practice_logging.py:refinement:8] data is downloaded.
+WARNING 2021-06-29 12:11:07,865 [refinement_for_practice_logging.py:refinement:10] will show the data of the requested genre.
+DEBUG 2021-06-29 12:16:08,661 [refinement_for_practice_logging.py:refinement:6] is about to download data.
+DEBUG 2021-06-29 12:16:10,933 [fetch_for_practice_logging.py:popular_movie:9] get the web address https://www.the-numbers.com/market/2021/top-grossing-movies
+DEBUG 2021-06-29 12:16:10,968 [fetch_for_practice_logging.py:popular_movie:12] get the data
+DEBUG 2021-06-29 12:16:10,968 [fetch_for_practice_logging.py:popular_movie:14] data is cleaned to be read
+DEBUG 2021-06-29 12:16:10,969 [refinement_for_practice_logging.py:refinement:8] data is downloaded.
+WARNING 2021-06-29 12:16:10,970 [refinement_for_practice_logging.py:refinement:10] will show the data of the requested genre.
