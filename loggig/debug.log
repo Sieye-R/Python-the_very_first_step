@@ -1,0 +1,106 @@
+1. $ python practice_logging1.py Horror
+
+
+WARNING 2021-06-29 13:18:57,167 [practice_logging1.py:<module>:8] Everything is going well.
+DEBUG 2021-06-29 13:18:57,167 [refinement_for_practice_logging.py:refinement:6] is about to download data.
+WARNING 2021-06-29 13:18:59,336 [fetch_for_practice_logging.py:popular_movie:9] get https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:18:59,376 [fetch_for_practice_logging.py:popular_movie:12] get the table movie from https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:18:59,377 [fetch_for_practice_logging.py:popular_movie:14] clean the data frame
+DEBUG 2021-06-29 13:18:59,378 [refinement_for_practice_logging.py:refinement:8] data is downloaded.
+WARNING 2021-06-29 13:18:59,378 [refinement_for_practice_logging.py:refinement:10] will show the data of the requested genre.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+2. $ python practice_logging2.py "Tickets Sold"
+
+WARNING 2021-06-29 13:20:41,051 [practice_logging2.py:<module>:9] ready to show the average.
+WARNING 2021-06-29 13:20:41,051 [mean_for_practice_logging.py:get_mean:6] about to download data.
+WARNING 2021-06-29 13:20:42,556 [fetch_for_practice_logging.py:popular_movie:9] get https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:20:42,595 [fetch_for_practice_logging.py:popular_movie:12] get the table movie from https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:20:42,596 [fetch_for_practice_logging.py:popular_movie:14] clean the data frame
+WARNING 2021-06-29 13:20:42,597 [mean_for_practice_logging.py:get_mean:8] data is downloaded.
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+3. $ python practice_logging2.py "Gross"
+
+WARNING 2021-06-29 13:21:44,726 [practice_logging2.py:<module>:9] ready to show the average.
+WARNING 2021-06-29 13:21:44,726 [mean_for_practice_logging.py:get_mean:6] about to download data.
+WARNING 2021-06-29 13:21:46,068 [fetch_for_practice_logging.py:popular_movie:9] get https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:21:46,108 [fetch_for_practice_logging.py:popular_movie:12] get the table movie from https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:21:46,110 [fetch_for_practice_logging.py:popular_movie:14] clean the data frame
+WARNING 2021-06-29 13:21:46,110 [mean_for_practice_logging.py:get_mean:8] data is downloaded.
+ERROR 2021-06-29 13:21:46,110 [practice_logging2.py:<module>:13] Error happened!
+Traceback (most recent call last):
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3080, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 4554, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 4562, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Gross'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "practice_logging2.py", line 10, in <module>
+    print(f"The average {sys.argv[1]} for movie in 2021 is {get_mean(sys.argv[1])}.")
+  File "/home/sieye/my_project_dir/Python-Practice-1/Intermediate_Level/logging/mean_for_practice_logging.py", line 9, in get_mean
+    return movie[ticker].mean()
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/frame.py", line 3024, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3082, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Gross'
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+4. $ python practice_logging2.py "2021 Gross"
+
+WARNING 2021-06-29 13:22:54,972 [practice_logging2.py:<module>:9] ready to show the average.
+WARNING 2021-06-29 13:22:54,972 [mean_for_practice_logging.py:get_mean:6] about to download data.
+WARNING 2021-06-29 13:22:57,536 [fetch_for_practice_logging.py:popular_movie:9] get https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:22:57,575 [fetch_for_practice_logging.py:popular_movie:12] get the table movie from https://www.the-numbers.com/market/2021/top-grossing-movies
+WARNING 2021-06-29 13:22:57,576 [fetch_for_practice_logging.py:popular_movie:14] clean the data frame
+WARNING 2021-06-29 13:22:57,577 [mean_for_practice_logging.py:get_mean:8] data is downloaded.
+ERROR 2021-06-29 13:22:57,577 [practice_logging2.py:<module>:13] Error happened!
+Traceback (most recent call last):
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/nanops.py", line 1537, in _ensure_numeric
+    x = float(x)
+ValueError: could not convert string to float: '$136,381,860$100,392,257$71,382,602$70,043,165$59,204,511$54,465,162$47,700,000$46,000,271$42,201,013$28,777,328$27,256,142$26,728,470$25,849,915$24,161,955$24,010,100$23,142,651$18,030,051$15,891,040$15,566,093$15,530,440$15,245,157$13,287,908$8,822,409$7,961,889$7,343,135$7,260,975$6,613,432$5,453,633$4,564,885$4,509,143$4,178,620$3,217,203$3,163,362$3,149,935$2,964,816$2,785,942$2,751,967$2,750,777$2,593,147$2,577,830$2,548,185$2,416,285$2,257,437$2,180,000$2,120,992$1,744,740$1,434,609$1,307,670$1,251,184$1,229,784$1,113,722$1,049,163$911,145$850,000$837,849$836,536$744,513$741,895$657,351$594,434$572,493$528,438$520,715$460,000$443,050$439,640$418,286$409,363$354,087$350,000$347,000$345,235$334,000$323,167$308,976$304,167$282,499$282,332$272,895$250,811$241,906$234,220$224,405$212,311$191,996$185,345$183,759$173,704$148,091$146,329$143,532$143,336$142,817$139,221$132,500$126,126$124,649$120,226$117,815$113,591$113,079$112,691$95,643$95,100$93,833$82,125$81,062$77,115$72,110$68,531$68,307$65,000$62,873$62,080$60,000$55,068$54,730$53,302$52,786$52,733$50,439$48,144$45,592$45,200$45,068$43,267$41,598$39,053$37,266$36,693$36,000$35,481$33,170$30,932$30,536$29,262$28,480$27,588$27,518$27,474$26,136$24,520$23,614$22,517$21,392$20,282$19,390$17,316$17,127$15,938$15,269$15,063$14,032$14,000$13,325$12,772$12,424$11,409$11,010$9,693$9,176$9,050$8,211$8,063$7,316$7,098$6,887$6,708$6,136$6,055$5,824$5,504$5,495$5,191$4,991$4,905$4,830$4,504$4,194$3,995$2,293$2,260$2,238$2,201$1,816$1,787$1,348$1,105$1,057$1,052$974$917$900$623$572$507$303'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/nanops.py", line 1541, in _ensure_numeric
+    x = complex(x)
+ValueError: complex() arg is a malformed string
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "practice_logging2.py", line 10, in <module>
+    print(f"The average {sys.argv[1]} for movie in 2021 is {get_mean(sys.argv[1])}.")
+  File "/home/sieye/my_project_dir/Python-Practice-1/Intermediate_Level/logging/mean_for_practice_logging.py", line 9, in get_mean
+    return movie[ticker].mean()
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/generic.py", line 11118, in mean
+    return NDFrame.mean(self, axis, skipna, level, numeric_only, **kwargs)
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/generic.py", line 10726, in mean
+    return self._stat_function(
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/generic.py", line 10711, in _stat_function
+    return self._reduce(
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/series.py", line 4182, in _reduce
+    return op(delegate, skipna=skipna, **kwds)
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/nanops.py", line 73, in _f
+    return f(*args, **kwargs)
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/nanops.py", line 135, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/nanops.py", line 394, in new_func
+    result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/nanops.py", line 633, in nanmean
+    the_sum = _ensure_numeric(values.sum(axis, dtype=dtype_sum))
+  File "/home/sieye/my_project_dir/my_project_env/lib/python3.8/site-packages/pandas/core/nanops.py", line 1544, in _ensure_numeric
+    raise TypeError(f"Could not convert {x} to numeric") from err
+TypeError: Could not convert $136,381,860$100,392,257$71,382,602$70,043,165$59,204,511$54,465,162$47,700,000$46,000,271$42,201,013$28,777,328$27,256,142$26,728,470$25,849,915$24,161,955$24,010,100$23,142,651$18,030,051$15,891,040$15,566,093$15,530,440$15,245,157$13,287,908$8,822,409$7,961,889$7,343,135$7,260,975$6,613,432$5,453,633$4,564,885$4,509,143$4,178,620$3,217,203$3,163,362$3,149,935$2,964,816$2,785,942$2,751,967$2,750,777$2,593,147$2,577,830$2,548,185$2,416,285$2,257,437$2,180,000$2,120,992$1,744,740$1,434,609$1,307,670$1,251,184$1,229,784$1,113,722$1,049,163$911,145$850,000$837,849$836,536$744,513$741,895$657,351$594,434$572,493$528,438$520,715$460,000$443,050$439,640$418,286$409,363$354,087$350,000$347,000$345,235$334,000$323,167$308,976$304,167$282,499$282,332$272,895$250,811$241,906$234,220$224,405$212,311$191,996$185,345$183,759$173,704$148,091$146,329$143,532$143,336$142,817$139,221$132,500$126,126$124,649$120,226$117,815$113,591$113,079$112,691$95,643$95,100$93,833$82,125$81,062$77,115$72,110$68,531$68,307$65,000$62,873$62,080$60,000$55,068$54,730$53,302$52,786$52,733$50,439$48,144$45,592$45,200$45,068$43,267$41,598$39,053$37,266$36,693$36,000$35,481$33,170$30,932$30,536$29,262$28,480$27,588$27,518$27,474$26,136$24,520$23,614$22,517$21,392$20,282$19,390$17,316$17,127$15,938$15,269$15,063$14,032$14,000$13,325$12,772$12,424$11,409$11,010$9,693$9,176$9,050$8,211$8,063$7,316$7,098$6,887$6,708$6,136$6,055$5,824$5,504$5,495$5,191$4,991$4,905$4,830$4,504$4,194$3,995$2,293$2,260$2,238$2,201$1,816$1,787$1,348$1,105$1,057$1,052$974$917$900$623$572$507$303 to numeric
